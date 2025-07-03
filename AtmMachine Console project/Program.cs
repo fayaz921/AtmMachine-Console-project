@@ -11,6 +11,7 @@ namespace AtmMachine_Console_project
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("\n * Wellcome to ATM *\n");
             List<Account> accounts = new List<Account>()
             {
                 new Account("fayaz",1234,5000),
