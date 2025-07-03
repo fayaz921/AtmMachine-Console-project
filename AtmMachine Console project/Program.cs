@@ -55,8 +55,8 @@ namespace AtmMachine_Console_project
                             if (currentaccont.Balance >= withdraw)
                             {
 
-                                Console.WriteLine("Amount Withdrawal successfully ");
                                 currentaccont.Balance -= withdraw;
+                                Console.WriteLine("Amount Withdrawal successfully ");
                             }
                             else
                             {
@@ -64,7 +64,7 @@ namespace AtmMachine_Console_project
                             }
                             break;
                         case "4":
-                            Console.WriteLine("Thanks for using ATM /n" + "Exiting");
+                            Console.WriteLine("Thanks for using ATM \n" + "Exiting");
                             exit = true;
                             break;
                         default:
@@ -76,7 +76,7 @@ namespace AtmMachine_Console_project
             }
             else
             {
-                Console.WriteLine("Invalid username or pin "+"Exiting");
+                Console.WriteLine("Invalid username or pin \n"+"Exiting");
                 return;
             }
         }
