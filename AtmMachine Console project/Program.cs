@@ -26,6 +26,52 @@ namespace AtmMachine_Console_project
             if (currentaccont != null)
             {
                 Console.WriteLine("Login Successfully");
+
+                bool exit = false;
+                while (!exit)
+                {
+                    Console.WriteLine("\n===ATM Menu===\n");
+                    Console.WriteLine("1:Check Balance :");
+                    Console.WriteLine("2:Deposit :");
+                    Console.WriteLine("3:Withdraw :");
+                    Console.WriteLine("4:Exit :");
+                    Console.Write("Select an Option :");
+                    string option = Console.ReadLine();
+                    switch(option)
+                    {
+                        case "1":
+                            Console.WriteLine($"Your current Balance is : {currentaccont.Balance}");
+                            break;
+                        case "2":
+                            Console.Write("Enter Deposit Amount :");
+                            decimal deposit = Convert.ToDecimal(Console.ReadLine());
+                            currentaccont.Balance += deposit;
+                            Console.WriteLine("Amount Deposited Successfully");
+                            break;
+                        case "3":
+                            Console.Write("Enter Withdrawal Amount :");
+                            decimal withdraw = Convert.ToDecimal(Console.ReadLine());
+                            if (currentaccont.Balance >= withdraw)
+                            {
+
+                                Console.WriteLine("Amount Withdrawal successfully ");
+                                currentaccont.Balance -= withdraw;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Balance is insufficient ");
+                            }
+                            break;
+                        case "4":
+                            Console.WriteLine("Thanks for using ATM /n" + "Exiting");
+                            exit = true;
+                            break;
+                        default:
+                            Console.WriteLine("Invalid option try again ");
+                            break;
+                    }
+                    Console.WriteLine();
+                }
             }
             else
             {
